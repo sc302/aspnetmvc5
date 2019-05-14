@@ -1,0 +1,33 @@
+﻿@model HtmlHelpers.Models.StudentOrnekViewModel
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>HiddenFor</title>
+</head>
+<body>
+    <fieldset>
+        <legend>
+
+        </legend>
+        @using (Html.BeginForm())
+        {
+            @Html.LabelFor(m=>m.StudentName) @: : &nbsp;
+            @Html.TextBoxFor(m=>m.StudentName)<br />
+
+            @Html.LabelFor(m=>m.Avarage) @: : &nbsp;
+            @Html.DisplayFor(m=>m.Avarage) <br />
+
+            <input type="submit" value="Update" name="update"/>
+
+            @Html.HiddenFor(m=>m.StudentId)
+        }
+    </fieldset>
+</body>
+</html>

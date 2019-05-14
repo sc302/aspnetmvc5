@@ -1,0 +1,30 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>DropDownList</title>
+</head>
+<body>
+    <div> 
+        <fieldset>
+            <legend>
+                Tanım:
+            </legend>
+            @Html.DropDownList("dropdown",
+           new[]
+           {
+               new SelectListItem { Value="1",Text="Matematik" },
+               new SelectListItem { Value="2",Text="Fizik"},
+               new SelectListItem { Value="3",Text="Biyoloji" },
+               new SelectListItem { Value="4",Text="Turkce",Selected=true},
+           })
+        </fieldset>
+    </div>
+</body>
+</html>

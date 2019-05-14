@@ -1,0 +1,22 @@
+﻿@model HtmlHelpers.Models.StudentOrnekViewModel
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>TextBoxFor</title>
+</head>
+<body>
+    <div> 
+        @using (Html.BeginForm("OutputPage", "StronglyTypedHtmlHelpers",FormMethod.Post))
+        {
+            <label>Adi: @Html.TextBoxFor(m=>m.StudentName)</label>
+            <input type="submit" name="save" value="Kaydet"/>
+        }
+    </div>
+</body>
+</html>

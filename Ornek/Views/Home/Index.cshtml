@@ -1,0 +1,69 @@
+﻿@model List<Ornek.Models.StudentViewModel>
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <style>
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        td, th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #dddddd;
+        }
+    </style>
+</head>
+<body>
+    <fieldset>
+        <legend>Tabloya </legend>
+        @using (Html.BeginForm("UpdateStudentInfo", "Home", FormMethod.Post))
+        {
+            <table>
+                <tr>
+                    @*<th>@Html.LabelFor(m => Model.FirstOrDefault().StudentId)</th>*@
+                    <th>@Html.LabelFor(m => Model.FirstOrDefault().StudentName)</th>
+                    <th>@Html.LabelFor(m => Model.FirstOrDefault().StudentNot)</th>
+                    <th>@Html.LabelFor(m => Model.FirstOrDefault().GectiKaldi)</th>
+                </tr>
+              
+                @*@foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@Html.TextBoxFor(m => item.StudentId, new { @readonly = "readonly" })</td>
+                        <td>@Html.DisplayFor(m=>item.StudentName)</td>
+                        <td>@Html.EditorFor(m=>item.StudentNot)</td>
+                        <td>@Html.CheckBoxFor(m=>item.GectiKaldi)</td>
+                    </tr>
+                }*@
+                @for (int i = 0; i < Model.Count(); i++)
+                {
+                    <tr>
+                        @*<td>@Html.TextBoxFor(m => Model[i].StudentId, new { @readonly = "readonly" })</td>*@
+                        <td>@Html.DisplayFor(m => Model[i].StudentName)</td>
+                        <td>@Html.EditorFor(m => Model[i].StudentNot)</td>
+                        <td>@Html.CheckBoxFor(m => Model[i].GectiKaldi)</td>
+                    </tr>
+                    @Html.HiddenFor(m=> Model[i].StudentId)
+                }
+            </table>
+            <p>
+                <input type="submit" value="Update" name="update" />
+            </p>
+        }
+    </fieldset>
+</body>
+</html>

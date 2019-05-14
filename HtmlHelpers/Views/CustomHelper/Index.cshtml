@@ -1,0 +1,32 @@
+﻿@using HtmlHelpers.Helpers
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+
+    <fieldset>
+        <legend>Static Custom Helper</legend>
+
+        @HtmlHelpers.Helpers.StaticCustomHelper.MyTextBox("mytextbox") direk olarak
+        <br />
+        @StaticCustomHelper.MyLabel("mytextbox1", "Kullanici adi:")
+        @StaticCustomHelper.MyTextBox("mytextbox1") using ile
+
+    </fieldset>
+
+    <fieldset>
+        <legend> Extension metod ile</legend>
+        @Html.MyTextBox("txtext") <br />
+        @Html.MyLabel("txtext","Extension Text")
+
+    </fieldset>
+</body>
+</html>

@@ -1,0 +1,44 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Label</title>
+</head>
+<body>
+    <div> 
+        <fieldset>
+            <legend> Tanım : Html deki label elementi
+            For attribute ile belirtilen deger id ile
+            belirtilen html element değerini niteler. For
+            genellikle checkbox ve radio gibi kontroller deki 
+            click olayını tetikler.
+            </legend>
+            <form action="">
+                <label for="male">Male</label>
+                <input type="radio" name="gender" id="male" value="male"><br>
+                <label for="female">Female</label>
+                <input type="radio" name="gender" id="female" value="female"><br>
+                <label for="other">Other</label>
+                <input type="radio" name="gender" id="other" value="other"><br><br>
+                <input type="submit" value="Submit">
+            </form>
+        </fieldset>
+    </div>
+    <fieldset>
+        <legend>Html Helper metodu olan Html.Label karşılığı</legend>
+        
+        @Html.Label("male1","Male",new {@style="color:red; font-style:italic;" })
+         
+        <input type="radio" name="gender" id="male1" value="male"><br>
+        @Html.Label("female1","Female")
+
+        <input type="radio" name="gender" id="female1" value="female"><br> 
+    </fieldset>
+</body>
+</html>

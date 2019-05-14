@@ -1,0 +1,29 @@
+﻿
+@{
+    ViewBag.Title = "ActionLink";
+}
+<style type="text/css">
+    .benim
+    {
+        font-family:Verdana;
+        color:red;
+    }
+</style>
+<h2>ActionLink</h2>
+@*Bu Htmlhelper Html deki a href üretir.*@
+@Html.ActionLink("Gönder","Ekran")
+
+@Html.ActionLink("Gönder2", "Ekran","Home")
+
+<p>routeValues ile</p>
+@Html.ActionLink("Gönder3", "Ekran", new { Arguman = "hello" })
+
+<p>html attributes ile</p>
+@Html.ActionLink("Gönder4", "Ekran", null,new { @class = "btn btn-primary btn-lg" })
+
+<p>html attributes ile</p>
+@Html.ActionLink("Gönder5", "Ekran", null, new { @class = "benim" })
+
+<p>html attributes ile</p>
+@Html.ActionLink("Gönder6", "Ekran", null, new { @style = "font-size:24px; font-weight:bold; color:purple;" })
+

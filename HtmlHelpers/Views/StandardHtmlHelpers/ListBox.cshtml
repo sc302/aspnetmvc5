@@ -1,0 +1,28 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>ListBox</title>
+</head>
+<body>
+    <fieldset>
+        <legend>
+            Tanım:
+        </legend>
+        @Html.ListBox("lstbox",
+           new[]
+           {
+               new SelectListItem { Value="1",Text="Matematik" },
+               new SelectListItem { Value="2",Text="Fizik"},
+               new SelectListItem { Value="3",Text="Biyoloji" },
+               new SelectListItem { Value="4",Text="Turkce",Selected=true},
+           })
+    </fieldset>
+</body>
+</html>

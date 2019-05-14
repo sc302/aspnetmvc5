@@ -1,0 +1,33 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div>
+        @Model
+
+        @using (Html.BeginForm("GetTime", "CustomModelBinding", FormMethod.Post))
+        {
+            <div>
+                <input type="text" name="gun" placeholder="Gun" />
+                <input type="text" name="yil" placeholder="Yil" />
+                <input type="text" name="ay" placeholder="Ay" />
+                <input type="text" name="saat" placeholder="saat" />
+                <input type="text" name="dakika" placeholder="dakika" />
+                <input type="text" name="saniye" placeholder="saniye"/>
+
+                <input type="submit" name="gonder" value="Postet" />
+            </div>
+        }
+
+    </div>
+</body>
+</html>

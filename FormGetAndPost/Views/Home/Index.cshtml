@@ -1,0 +1,56 @@
+﻿
+@{
+    Layout = null;
+    var routeValues = new RouteValueDictionary();
+    routeValues.Add("id", 5);
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!-- Opsiyonel tema -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
+</head>
+<body>
+    <fieldset>
+        <legend>Update et</legend>
+        <div>
+            @using (Html.BeginForm("PostMetod", "Home", new { id = "10" }, FormMethod.Post))
+            {
+                <div>
+                    @Html.Label("Ogreni Adı :") &nbsp;
+                    @Html.TextBox("txt1")
+                </div>
+                <button type="submit" name="btn2">Kaydet1</button>
+            }
+        </div>
+    </fieldset>
+
+    <fieldset>
+        <legend></legend>
+        <div>
+            @{
+               
+
+                using (Html.BeginForm("GetMetod", "Home", routeValues, FormMethod.Get))
+                {
+
+                    <input type="submit" name="btn2" value="Getir" />
+                }
+            }
+        </div>
+    </fieldset>
+    <fieldset>
+        <legend></legend>
+        @{
+            @Html.ActionLink("Getir", "GetMetod", new { id = 12 }, new { @class = "btn btn-primary btn-lg" })
+
+        }
+
+    </fieldset>
+</body>
+</html>

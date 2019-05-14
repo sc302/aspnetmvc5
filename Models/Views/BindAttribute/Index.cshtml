@@ -1,0 +1,26 @@
+﻿@model Models.Models.CategoryViewModel
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div> 
+        @using (Html.BeginForm("ExcludePost","BindAttribute",FormMethod.Post))
+        {
+             @Html.LabelFor(m=>m.CategoryName) 
+             @Html.EditorFor(m=>m.CategoryName)
+            <br />
+            @Html.LabelFor(m=>m.Stock)
+            @Html.EditorFor(m=>m.Stock)
+            <input type="submit" value="Gonder" name="gonder"/>
+        }
+    </div>
+</body>
+</html>

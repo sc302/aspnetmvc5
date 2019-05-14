@@ -1,0 +1,80 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>BeginForm</title>
+    <style>
+        .bform {
+            border-color: red;
+            border-width: 5px;
+            border-style: solid;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        @*Html.BeginForm() html de ki form post elementinin
+            karşılığıdır.*@
+        @using (Html.BeginForm())
+        {
+            <input type="submit" name="kaydet" value="Kaydet" />
+        }
+
+    </div>
+    <fieldset>
+        <legend>Begin Form FormMethod argumani ile</legend>
+        @using (Html.BeginForm("Ekran", "StandardHtmlHelpers", FormMethod.Post))
+        {
+            <button type="submit" name="btn">Kaydet2</button>
+        }
+    </fieldset>
+    <hr />
+    <fieldset>
+        <legend>Begin Form style ile</legend>
+        <div>
+            @using (Html.BeginForm("Ekran", "Home", FormMethod.Post, new { @class = "bform" }))
+            {
+                <button type="submit" name="btn2">Kaydet2</button>
+            }
+        </div>
+    </fieldset>
+    <hr />
+    <fieldset>
+        <legend>Begin Form arguman ile</legend>
+        <div>
+            @using (Html.BeginForm("Ekran", "StandardHtmlHelpers", new { Arguman = "Selam" }, FormMethod.Post, new { @class = "bform" }))
+            {
+                <button type="submit" name="btn2">Kaydet3</button>
+            }
+        </div>
+    </fieldset>
+    <hr />
+    <fieldset>
+        <legend>Html input kullarak</legend>
+        <div>
+            @using (Html.BeginForm("Ekran", "StandardHtmlHelpers", FormMethod.Post, new { @class = "bform" }))
+            {
+                <div class="editor-label">
+                    <label>Adı:</label>
+                </div>
+                <div class="editor-field">
+                    <input name="adi" type="text" />
+                </div>
+                <div class="editor-label">
+                    <label>Soyadı:</label>
+                </div>
+                <div class="editor-field">
+                    <input name="soyadi" type="text"/>
+                </div>
+                <button type="submit" name="btn2">Kaydet3</button>
+            }
+        </div>
+    </fieldset>
+</body>
+</html>

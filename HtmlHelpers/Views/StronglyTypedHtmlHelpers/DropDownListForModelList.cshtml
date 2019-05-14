@@ -1,0 +1,72 @@
+﻿@model IEnumerable<HtmlHelpers.Models.Lecture>
+    @using HtmlHelpers.Helpers
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>DropDownListForModelList</title>
+    <style>
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        td, th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #dddddd;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        @*@using (Html.BeginForm())
+        {
+            @Html.LabelFor(m => Model.FirstOrDefault().LectureName)
+            @Html.DropDownListFor(m => Model.FirstOrDefault().LectureId, new SelectList(Model, "LectureId", "LectureName"), "Please Select")
+            <input type="submit" name="gonder" value="Gonder" />
+        }*@
+
+
+
+    </div>
+
+    <fieldset>
+        <legend>Tabloya </legend>
+        @using (Html.BeginForm("ModelListPost", "StronglyTypedHtmlHelpers",FormMethod.Post))
+        {
+        <table>
+            <tr>
+                <th>@Html.LabelFor(m => Model.FirstOrDefault().LectureId)</th>
+                <th>@Html.LabelFor(m => Model.FirstOrDefault().LectureName)</th>
+                <th>@Html.LabelFor(m => Model.FirstOrDefault().IsOk)</th>
+            </tr>
+            @Html.MyLabel("txtext", "Extension Text")
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.LectureId</td>
+                    <td>@item.LectureName</td>
+                    <td>@Html.MyCheckBoxFor(item.IsOk,item.LectureId)</td>
+
+                     
+                </tr>
+            }
+        </table>
+        <p>
+            <input type="submit" value="Update" name="update" />
+        </p>
+        }
+    </fieldset>
+</body>
+</html>

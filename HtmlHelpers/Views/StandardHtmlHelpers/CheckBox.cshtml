@@ -1,0 +1,65 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>CheckBox</title>
+</head>
+<body>
+    <div> 
+        <fieldset>
+            <legend>
+                @*Html deki input value checkbox olan html helper metodudur*@
+                form actionda  hatirlama
+
+            </legend>
+            <form action="">
+                <input type="checkbox" name="vehicle1" value="Bike"> I have a bike<br>
+                <input type="checkbox" name="vehicle2" value="Car"> I have a car<br>
+                <input type="checkbox" name="vehicle3" value="Boat" checked> I have a boat<br><br>
+                <input type="submit" value="Submit">
+            </form>
+
+        </fieldset>
+    </div>
+    <hr/>
+    <fieldset>
+        <legend>
+            Kullanimi
+        </legend>
+        Is Ok: @Html.CheckBox("chk", "Tamam")
+
+    </fieldset>
+    <fieldset>
+        <legend>
+            Begin Form ile, checkbox degeri belirleyebiliriz.
+
+        </legend>
+
+        @using (Html.BeginForm())
+        {
+            @Html.Label("ch","Is Ok:")
+            @Html.CheckBox("ch", new { Name="Tamam"})
+            <input type="submit" name="save" value="Gönder"/>
+        }
+    </fieldset>
+    <fieldset>
+        <legend>
+            Begin Form ile, HtmlHelper ilgili checkbox icin hidden
+            input uretir, varsayilan degeri bool dur.
+        </legend>
+
+        @using (Html.BeginForm())
+        {
+            @Html.Label("ch", "Is Ok:")
+            @Html.CheckBox("ch")
+            <input type="submit" name="save" value="Gönder" />
+        }
+    </fieldset>
+</body>
+</html>

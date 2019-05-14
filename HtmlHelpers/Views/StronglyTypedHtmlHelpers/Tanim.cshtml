@@ -1,0 +1,26 @@
+﻿@model HtmlHelpers.Models.StudentOrnekViewModel
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Tanim</title>
+</head>
+<body>
+    <div> 
+        Mvc strongly typed bir frameworkdur. Weakly typed frameworklerde
+        vardir, mesela php.
+        Mantik, her bir tipin bir model tipinde olmamasi ve tiplerin
+        genel olarak string yada int gibi tanimlanmamasi.
+    </div>
+    <hr />
+    <p>@Model.StudentName</p>
+    <p>@Model.IsPass</p>
+    <p>@Model.Avarage</p>
+
+</body>
+</html>

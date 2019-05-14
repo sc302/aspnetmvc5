@@ -1,0 +1,66 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>TextBox</title>
+    <style>
+        .txt
+        {
+            border:1px solid #ccc;
+            padding: 2px;
+            font-size:1.2em;
+            color :red;
+            width:200px;
+            background:#000000;
+        }
+    </style>
+</head>
+<body>
+    <div> 
+        <fieldset>
+            <legend>
+                Html form post ile 
+            </legend>
+            <form action="" method="post">
+                Adi : <input type="text" name="adi" /><br />
+                Soyadi : <input type="text" name="adi" />
+                <input type="submit" value="Kaydet"/>
+            </form>
+        </fieldset>
+    </div>
+    <div>
+        <fieldset>
+            <legend>
+                Html.TextBox Kullanimi
+                 @*Html deki <input type şeklindeki elementleri
+                     Standard Html helper Metodu olan Html.TextBox
+                     ile yapabiliriz.*@
+            </legend>
+           @using (Html.BeginForm())
+           {
+              <label> Adi: @Html.TextBox("adi","Mustafa") </label>
+            <label> Soyadi: @Html.TextBox("adi") </label>
+            <input type="submit" value="Kaydet" />
+           }
+        </fieldset>
+    </div>
+    <fieldset>
+        <legend>
+            Style uygulayarak
+        </legend>
+        @using (Html.BeginForm())
+        {
+            <label> Adi: @Html.TextBox("adi", "Mustafa",new {@class="txt" })</label>  
+            <label> Soyadi: @Html.TextBox("adi") </label>
+            <input type="submit" value="Kaydet" />
+        }
+    </fieldset>
+
+</body>
+</html>

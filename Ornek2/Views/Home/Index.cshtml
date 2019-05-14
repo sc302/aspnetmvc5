@@ -1,0 +1,43 @@
+﻿@model IEnumerable<Ornek2.Models.KategoriProductViewModel>
+@{
+    Layout = null;
+    bool postedildimi = false;
+    if (IsPost)
+    {
+        postedildimi = true;
+    }
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div>
+        @using (Html.BeginForm())
+        {
+            @Html.LabelFor(m => Model.FirstOrDefault().KategoriAdi)
+            @Html.DropDownListFor(m => Model.FirstOrDefault().KategoriId, new SelectList(Model, "KategoriId", "KategoriAdi"), "Please Select")
+        
+            <input type="submit" name="gonder" value="Gonder" />
+        }
+    </div>
+    <hr />
+    <div>
+        @{
+            if (postedildimi)
+            {
+                if (!string.IsNullOrEmpty(this.Request["kategoriId"]))
+                {
+                    @Html.Partial("ProductsView", Model.FirstOrDefault(x => x.KategoriId == int.Parse(this.Request["kategoriId"])).Products)
+                }
+
+            }
+        }
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,51 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>TextArea</title>
+</head>
+<body>
+    <div> 
+        @*Html de ki <textarea/> elementinin karışılığı  Html helper metodu olan Html.TextArea dır.*@
+        
+        <fieldset>
+            <legend>Html.TextArea(string name) helper metodu ile</legend>
+            Adres : @Html.TextArea("txtAddress")<br />
+            
+        </fieldset>
+    </div>
+
+    <hr />
+    <fieldset>
+        <legend>Html.BeginForm ile:</legend>
+        @using (Html.BeginForm())
+        {
+            @Html.TextArea("txt")<br />
+            @Html.TextArea("txt")
+
+            <input type="submit" name="save" value="Kaydet"/>
+        }
+    </fieldset>
+    <fieldset>
+        <legend>Varsayilan deger ile:</legend>
+        @using (Html.BeginForm())
+        {
+            @Html.TextArea("txt","Balat mahallesi bitisikbaglar sokak")<br />
+            @Html.TextArea("lst","Varsayilan deger")
+
+            <input type="submit" name="save" value="Kaydet" />
+        }
+    </fieldset>
+    <fieldset>
+        <legend>Style uygulayarak:</legend>
+        @Html.Label("txt","Adress:")
+        @Html.TextArea("txt",new {@style="border:2px solid black; background:red;" })
+    </fieldset>
+</body>
+</html>

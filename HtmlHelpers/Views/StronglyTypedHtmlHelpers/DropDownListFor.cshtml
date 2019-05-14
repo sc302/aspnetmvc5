@@ -1,0 +1,24 @@
+﻿@model HtmlHelpers.Models.LectureListViewModel
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>DropDownListFor</title>
+</head>
+<body>
+    <div> 
+        @using (Html.BeginForm())
+        {
+            @Html.LabelFor(m=>m.SelectedLecture)
+            @Html.DropDownListFor(m=>m.SelectedLecture,Model.Dersler,"Please Select",new { @class = "form-control" })
+
+            <input type="submit" value="Gonder" name="send"/>
+        }
+    </div>
+</body>
+</html>

@@ -1,0 +1,50 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>RadioButton</title>
+</head>
+<body>
+    <div> 
+        <fieldset>
+            <legend>Html radio button</legend>
+            <form action="">
+                <input type="radio" name="gender" value="male"> Male<br>
+                <input type="radio" name="gender" value="female"> Female<br>
+                <input type="radio" name="gender" value="other"> Other
+            </form>
+        </fieldset>
+    </div>
+    <fieldset>
+        <legend>Html helper metodu Kullanim</legend>
+        @Html.Label("m","Male")
+        @Html.RadioButton("radio1","male",new { id = "m" })<br />
+        @Html.Label("f","Female")
+        @Html.RadioButton("radio1","female",new { id="f"})<br />
+        @Html.Label("o","Other")
+        @Html.RadioButton("radio1","other",new { id = "o" })
+    </fieldset>
+    <div>
+        <fieldset>
+            <legend>Begin Form ile</legend>
+            @using (Html.BeginForm())
+            {
+                @Html.Label("mm", "Male")
+                @Html.RadioButton("radio", "male",true, new { id = "mm" })<br />
+                @Html.Label("ff", "Female")
+                @Html.RadioButton("radio", "female", new { id = "ff" })<br />
+                @Html.Label("oo", "Other")
+                @Html.RadioButton("radio", "other", new { id = "oo" })
+
+                <input type="submit" name="save" value="Gönder"/>
+            }
+        </fieldset>
+    </div>
+</body>
+</html>

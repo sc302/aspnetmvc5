@@ -1,0 +1,48 @@
+﻿@model HtmlHelpers.Models.StudentOrnekViewModel
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>EditorFor</title>
+</head>
+<body>
+    <div>
+        @using (Html.BeginForm())
+        {
+            @Html.LabelFor(m => m.StudentName) @: : &nbsp;
+            @Html.EditorFor(m => m.StudentName)
+            <br />
+
+            @Html.LabelFor(m => m.Avarage) @: : &nbsp;
+            @Html.EditorFor(m => m.Avarage)
+            <br />
+            @Html.LabelFor(m => m.Password) @: : &nbsp;
+            @Html.EditorFor(m => m.Password)
+
+            <br />
+
+            @Html.LabelFor(m => m.IsPass) @: : &nbsp;
+            @Html.EditorFor(m => m.IsPass)
+
+            <br />
+
+            @Html.LabelFor(m => m.BirthDay) @: : &nbsp;
+            @Html.EditorFor(m => m.BirthDay)
+
+            <br />
+
+            @Html.LabelFor(m => m.Email) @: : &nbsp;
+            @Html.EditorFor(m => m.Email)
+            <br />
+            <input type="submit" name="gonder" value="Gonder" />
+        }
+
+    </div>
+</body>
+</html>

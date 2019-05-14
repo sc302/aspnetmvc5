@@ -1,0 +1,30 @@
+﻿@model Views.Models.StudentViewModel
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div> 
+        <h1>Index sayfasi</h1>
+        @Html.ActionLink("PartialView Getir","GetPartialView")
+        <br />
+        @Html.ActionLink("ResultView2 Getir","GetResultView2",new { id =Model.StudentId})
+    </div>
+    <hr />
+    <div>
+        @Html.Partial("PartialView2")
+    </div>
+
+    <hr />
+    <div>
+        @Html.Partial("/Views/PartialView1.cshtml")
+    </div>
+</body>
+</html>

@@ -1,0 +1,25 @@
+﻿@model HtmlHelpers.Models.StudentOrnekViewModel
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>LabelFor</title>
+</head>
+<body>
+    <div> 
+        @using (Html.BeginForm("OutputPage", "StronglyTypedHtmlHelpers", FormMethod.Post))
+        {
+              @Html.LabelFor(m=>m.StudentName, new { @style = "color:red; font-style:italic;" })
+              @Html.TextBoxFor(m => m.StudentName)
+            @Html.LabelFor(m => m.Avarage)
+            @Html.TextBoxFor(m => m.Avarage)
+            <input type="submit" name="save" value="Kaydet" />
+        }
+    </div>
+</body>
+</html>

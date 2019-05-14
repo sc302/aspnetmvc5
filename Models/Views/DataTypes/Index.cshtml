@@ -1,0 +1,46 @@
+﻿@model Models.Models.TeacherViewModel
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div> 
+        @using (Html.BeginForm())
+        {
+            @*@Html.ValidationSummary()*@
+
+            @Html.LabelFor(m => m.TeacherName)
+            @Html.TextBoxFor(m => m.TeacherName)
+            @Html.ValidationMessageFor(m => m.TeacherName)
+            <br />
+
+
+            @Html.LabelFor(m => m.Email)
+            @Html.EditorFor(m => m.Email)
+            @Html.ValidationMessageFor(m => m.Email)
+            <br />
+
+            @Html.LabelFor(m => m.Password)
+            @Html.EditorFor(m => m.Password)
+            @Html.ValidationMessageFor(m => m.Password)
+            <br />
+
+            @Html.LabelFor(m => m.BirthDay)
+            @Html.EditorFor(m => m.BirthDay)
+            @Html.ValidationMessageFor(m => m.BirthDay)
+            <br />
+
+            <input type="submit" name="gonder" value="Gönder" />
+        }
+
+    </div>
+</body>
+</html>

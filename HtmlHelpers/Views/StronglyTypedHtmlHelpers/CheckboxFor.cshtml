@@ -1,0 +1,39 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+@model HtmlHelpers.Models.StudentOrnekViewModel
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>CheckboxFor</title>
+</head>
+<body>
+    <div> 
+        <fieldset>
+            <legend>Kullanim</legend>
+            @Html.LabelFor(m=>m.StudentName)<br />
+            @Html.TextBoxFor(m=>m.StudentName)<br />
+            @Html.LabelFor(m=>m.Avarage)<br />
+            @Html.TextBoxFor(m=>m.Avarage)<br />
+            @Html.CheckBoxFor(m=>m.IsPass)
+        </fieldset>
+    </div>
+    <fieldset>
+        <legend>
+            Begin Form ile
+        </legend>
+        @using (Html.BeginForm("OutputPage", "StronglyTypedHtmlHelpers",FormMethod.Post))
+        {
+            @Html.LabelFor(m => m.StudentName)<br />
+            @Html.TextBoxFor(m => m.StudentName)<br />
+            @Html.LabelFor(m => m.Avarage)<br />
+            @Html.TextBoxFor(m => m.Avarage)<br />
+            @Html.CheckBoxFor(m => m.IsPass)
+            <input type="submit" value="Gönder" name="save"/>
+         }
+    </fieldset>
+</body>
+</html>

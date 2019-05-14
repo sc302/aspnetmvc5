@@ -1,0 +1,23 @@
+﻿@model IEnumerable<HtmlHelpers.Models.Lecture>
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>ListBoxFor</title>
+</head>
+<body>
+    <div> 
+        @using (Html.BeginForm())
+        {
+            @Html.LabelFor(m => Model.FirstOrDefault().LectureName)
+            @Html.ListBoxFor(m => Model.FirstOrDefault().LectureId, new SelectList(Model, "LectureId", "LectureName"), "Please Select")
+            <input type="submit" name="gonder" value="Gonder" />
+        }
+    </div>
+</body>
+</html>

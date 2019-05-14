@@ -1,0 +1,39 @@
+﻿@model HtmlHelpers.Models.StudentInfoViewModel
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>RadioButtonFor</title>
+</head>
+<body>
+    <div> 
+        <fieldset>
+            <legend>Kullanım</legend>
+        </fieldset>
+        @Html.Label("Kadın:",new { @for="k"})
+        @Html.RadioButtonFor(m=>m.Gender,"kadin",new { id = "k" })<br />
+        @Html.Label("m", "Male")
+        @Html.RadioButtonFor(m => m.Gender, "erkek", new { id = "m" })
+       
+    </div>
+    <div>
+        <fieldset>
+            <legend>Begin Form ile</legend>
+        </fieldset>
+        @using (Html.BeginForm("OutputPage", "StronglyTypedHtmlHelpers", FormMethod.Post))
+        {
+            @Html.Label("Kadın:", new { @for = "kk" })
+            @Html.RadioButtonFor(m => m.Gender, "kadin", new { id = "kk" })<br />
+            @Html.Label("mm", "Male")
+            @Html.RadioButtonFor(m => m.Gender, "erkek", new { id = "mm" })
+
+            <button type="submit" name="gnd">Gonder</button>
+         }
+    </div>
+</body>
+</html>

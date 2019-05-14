@@ -1,0 +1,28 @@
+﻿@model Models.Models.ProductViewModel
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div> 
+        @using (Html.BeginForm("PostProductInfo", "CustomProductInfoBinder", FormMethod.Post))
+        {
+            @Html.LabelFor(m=>m.ProductName)
+            @Html.TextBoxFor(m=>m.ProductName)
+            <br />
+            <input type="text" name="gun" placeholder="Gün"/>
+            <input type="text" name="ay" placeholder="Ay" />
+            <input type="text" name="yil" placeholder="Yıl" />
+
+            <input type="submit" name="gonder" value="Gonder"/>
+        }
+    </div>
+</body>
+</html>
