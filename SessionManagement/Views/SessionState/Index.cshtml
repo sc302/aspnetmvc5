@@ -1,0 +1,29 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div> 
+        
+        <a href="@Url.Action("CreateSessionValue","SessionState")">Create Session Value</a>
+        <br />
+
+        <a href="@Url.Action("ReadSessionValue","SessionState")">Read Session Value</a>
+        <br />
+        <a href="@Url.Action("DeleteSessionValue","SessionState")">Delete Session Value</a>
+        <br />
+        <a href="@Url.Action("UpdateSessionValue","SessionState")">Delete Session Value</a>
+        <br />
+        <a href="@Url.Action("AbandonSession","SessionState")">Abandon Session Value</a>
+        <br />
+    </div>
+</body>
+</html>

@@ -216,6 +216,7 @@
     <Content Include="Views\StronglyTypedHtmlHelpers\PasswordFor.cshtml" />
     <Content Include="Views\StronglyTypedHtmlHelpers\EditorFor.cshtml" />
     <Content Include="Views\CustomHelper\Index.cshtml" />
+    <Content Include="Views\StronglyTypedHtmlHelpers\EditorForModel.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

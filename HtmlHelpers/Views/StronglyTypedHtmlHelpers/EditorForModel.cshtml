@@ -1,0 +1,23 @@
+﻿@model HtmlHelpers.Models.Lecture
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>EditorForModel</title>
+</head>
+<body>
+    <div> 
+        @using (Html.BeginForm())
+        {
+            @Html.EditorForModel("Lecture")
+            <input type="submit" name="send" value="Gonder"/>
+         }
+       
+    </div>
+</body>
+</html>

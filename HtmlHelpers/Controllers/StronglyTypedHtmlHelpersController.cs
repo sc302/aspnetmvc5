@@ -139,6 +139,15 @@ namespace HtmlHelpers.Controllers
             return RedirectToAction("DropDownListForModelList");
         }
      
+        public ActionResult EditorForModel(Lecture arg)
+        {
+            var lecture = new Lecture();
+            lecture.IsOk = true;
+            lecture.LectureId = 1;
+            lecture.LectureName = "math";
+            
+            return View(lecture);
+        }
     }
 
     class Student //Bu Bir domain objesi olabilirdi. 
