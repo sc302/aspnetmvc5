@@ -25,6 +25,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Filters", "Filters\Filters.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SessionManagement", "SessionManagement\SessionManagement.csproj", "{2CD02751-8154-4781-B539-918AE38F64B0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JsonResultKullanimi", "JsonResultKullanimi\JsonResultKullanimi.csproj", "{C7D1CA3F-AD70-44E3-B66B-7288FDBBE06C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -75,6 +77,10 @@ Global
 		{2CD02751-8154-4781-B539-918AE38F64B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2CD02751-8154-4781-B539-918AE38F64B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2CD02751-8154-4781-B539-918AE38F64B0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C7D1CA3F-AD70-44E3-B66B-7288FDBBE06C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C7D1CA3F-AD70-44E3-B66B-7288FDBBE06C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C7D1CA3F-AD70-44E3-B66B-7288FDBBE06C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C7D1CA3F-AD70-44E3-B66B-7288FDBBE06C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,0 +1,50 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    @*<script src="~/Scripts/jquery-3.4.1.min.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#getStudent').click(function () {
+                var id = $('#studentId').val();
+
+                $.ajax({
+                    url: '/Home/GetStudent/' + id,
+                    type: 'POST',
+                    dataType: 'json',
+                    success: function (data) {
+                        console.log(data);
+
+                        $("#studentName").html(data.StudentName);
+                        $("#studentLastName").html(data.StudentLastName);
+                        $("#avarage").html(data.Avarage);
+                    },
+                    error: function () {
+                        alert("oyle bir ogrenci yok");
+                    }
+                });
+            });
+
+        });
+    </script>*@
+</head>
+<body>
+    @*<div>      
+        <input type="text"  id="studentId"/>
+        <br />
+        <input type="submit" id="getStudent" value="OgrenciGetir"/>
+    </div>
+    <div>
+        <p>Öğrenci Adı: <strong id="studentName"></strong> </p>
+        <p>Öğrenci Soyadı: <strong id="studentLastName"></strong></p>
+        <p>Ortalama : <strong id="avarage"></strong></p>
+    </div>*@
+</body>
+</html>
